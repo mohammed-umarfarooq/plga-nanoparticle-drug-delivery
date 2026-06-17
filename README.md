@@ -234,6 +234,7 @@ How does drug release rate affect tumor suppression?
 | :--- | :--- |
 | **Mohammed Umar Farooq** | B.Tech AIML (Minor: Robotics & Automation) |
 | **Shreya** | BCS |
+| **Shreya** | BCS |
 
 ## License
 
