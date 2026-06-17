@@ -149,8 +149,7 @@ PLGA-Nanoparticle-Simulation/
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/PLGA-Nanoparticle-Simulation.git
-
+git clone https://github.com/mohammed-umarfarooq/plga-nanoparticle-drug-delivery.git
 cd PLGA-Nanoparticle-Simulation
 ```
 
