@@ -228,13 +228,12 @@ How does drug release rate affect tumor suppression?
 
 ---
 
-## Author
+## Authors
 
-*Mohammed Umar Farooq
-*B.Tech AIML (Minor: Robotics & Automation)
-*Shreya (BCS)
-*Shreya (BCS)
----
+| Name | Course / Specialization |
+| :--- | :--- |
+| **Mohammed Umar Farooq** | B.Tech AIML (Minor: Robotics & Automation) |
+| **Shreya** | BCS |
 
 ## License
 
