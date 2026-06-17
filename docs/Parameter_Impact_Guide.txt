@@ -1,0 +1,301 @@
+====================================================
+PLGA NANOPARTICLE SIMULATION
+PARAMETER IMPACT GUIDE
+====================================================
+
+This document explains how each parameter affects
+the simulation results.
+
+====================================================
+1. DOMAIN PARAMETERS
+====================================================
+
+Lx = Tumor Length
+Ly = Tumor Width
+
+Increase:
+- Larger tumor domain
+- More space for nanoparticle diffusion
+- Longer penetration distance
+
+Decrease:
+- Smaller tumor
+- Faster simulation
+
+====================================================
+2. GRID PARAMETERS
+====================================================
+
+Nx = Number of Grid Points (X)
+Ny = Number of Grid Points (Y)
+
+Increase:
+- Better accuracy
+- Smoother contours
+- Longer computation time
+
+Decrease:
+- Faster simulation
+- Less accuracy
+
+====================================================
+3. DIFFUSION COEFFICIENT
+====================================================
+
+D = Diffusion Coefficient
+
+Current:
+D = 1e-8
+
+Increase D:
+- Nanoparticles spread faster
+- Higher penetration depth
+- Drug reaches more tumor tissue
+
+Decrease D:
+- Nanoparticles remain localized
+- Lower penetration depth
+
+Mainly affects:
+Result 1 (Particle Size Study)
+
+====================================================
+4. HYDRAULIC CONDUCTIVITY
+====================================================
+
+K = Hydraulic Conductivity
+
+Current:
+K = 1e-13
+
+Increase K:
+- Stronger fluid flow
+- More convection
+- Faster transport
+
+Decrease K:
+- Diffusion dominates
+- Slower transport
+
+Affects:
+Pressure and Velocity fields
+
+====================================================
+5. CELL UPTAKE RATE
+====================================================
+
+uptake_rate = Cellular Uptake
+
+Current:
+uptake_rate = 0.02
+
+Increase:
+- Cells absorb nanoparticles faster
+- Lower penetration depth
+- Less drug reaches deeper regions
+
+Decrease:
+- Nanoparticles travel farther
+- Higher penetration depth
+
+Affects:
+Result 1
+
+====================================================
+6. RELEASE RATE
+====================================================
+
+release_rate
+
+Current:
+release_rate = 0.05
+
+Increase:
+- Faster drug release
+- Higher drug concentration
+- Stronger tumor killing
+
+Decrease:
+- Slower drug release
+- Lower tumor suppression
+
+Affects:
+Result 2
+
+====================================================
+7. RELEASE RATE STUDY
+====================================================
+
+Slow Release = 0.02
+Medium Release = 0.05
+Fast Release = 0.10
+
+Increase values:
+- More aggressive therapy
+- Greater tumor reduction
+
+Decrease values:
+- Weaker therapy
+- Less tumor reduction
+
+Affects:
+Result 2
+
+====================================================
+8. TUMOR GROWTH RATE
+====================================================
+
+growth_rate = 0.02
+
+Increase:
+- Tumor grows faster
+- Harder to treat
+- Lower reduction percentage
+
+Decrease:
+- Tumor grows slower
+- Easier to suppress
+
+Affects:
+Tumor Growth Curve
+
+====================================================
+9. DRUG EFFICACY
+====================================================
+
+drug_efficacy = 0.5
+
+Increase:
+- Drug becomes more powerful
+- Greater tumor reduction
+- Can produce 100% reduction
+
+Decrease:
+- Drug becomes weaker
+- Lower tumor reduction
+
+Typical Range:
+0.3 - 1.0
+
+Affects:
+Result 2
+
+====================================================
+10. CARRYING CAPACITY
+====================================================
+
+carrying_capacity = 1e8
+
+Increase:
+- Tumor can grow larger
+
+Decrease:
+- Tumor reaches saturation earlier
+
+Affects:
+Tumor Growth Curve
+
+====================================================
+11. TIME STEP
+====================================================
+
+dt = 0.1
+
+Increase:
+- Faster simulation
+- Less numerical stability
+
+Decrease:
+- More stable
+- Longer runtime
+
+====================================================
+12. NUMBER OF TIME STEPS
+====================================================
+
+time_steps = 300
+
+Increase:
+- Longer simulation duration
+- More drug release
+- More tumor response
+
+Decrease:
+- Shorter simulation
+- Less treatment effect
+
+====================================================
+RESULT 1 PARAMETERS
+====================================================
+
+Most Important:
+
+1. D
+2. uptake_rate
+3. particle_sizes
+
+Higher D:
+More penetration
+
+Higher uptake_rate:
+Less penetration
+
+Smaller particle:
+More penetration
+
+====================================================
+RESULT 2 PARAMETERS
+====================================================
+
+Most Important:
+
+1. release_rate
+2. drug_efficacy
+3. growth_rate
+4. time_steps
+
+Higher release_rate:
+More tumor suppression
+
+Higher drug_efficacy:
+More tumor suppression
+
+Higher growth_rate:
+Less tumor suppression
+
+Longer simulation:
+Greater treatment effect
+
+====================================================
+SAFE PARAMETER RANGES
+====================================================
+
+D               : 1e-9  to 1e-7
+K               : 1e-14 to 1e-12
+uptake_rate     : 0.01  to 0.10
+release_rate    : 0.01  to 0.20
+growth_rate     : 0.01  to 0.05
+drug_efficacy   : 0.3   to 1.0
+time_steps      : 200   to 500
+
+====================================================
+CURRENT BEST SETTINGS
+====================================================
+
+D = 1e-8
+K = 1e-13
+uptake_rate = 0.02
+
+release_rate = 0.05
+
+growth_rate = 0.02
+drug_efficacy = 0.7
+
+time_steps = 300
+
+These settings produce:
+- Realistic penetration depths
+- Meaningful release rate comparison
+- Stable simulation behavior
+
+====================================================

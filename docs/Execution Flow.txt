@@ -1,0 +1,28 @@
+main.py
+   │
+   ▼
+solver.py
+   │
+   ├── pressure_model.py
+   │       ▼
+   │   Pressure + Velocity
+   │
+   ├── transport_model.py
+   │       ▼
+   │   Nanoparticle Transport
+   │
+   ├── drug_release.py
+   │       ▼
+   │   Drug Release
+   │
+   ├── tumor_growth.py
+   │       ▼
+   │   Tumor Response
+   │
+   ├── result1_particle_size.py
+   │       ▼
+   │   50nm vs 100nm vs 200nm
+   │
+   └── result2_release_rate.py
+           ▼
+       Slow vs Medium vs Fast Release

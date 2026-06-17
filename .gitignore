@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# IDE Files
+.vscode/
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Environment Files
+.env
+
+# Simulation Outputs
+results/
+
+# Generated Figures
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Build Files
+build/
+dist/
+*.egg-info/
