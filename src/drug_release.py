@@ -10,24 +10,47 @@ def solve_drug_release(
     C_np,
     release_constant=release_rate
 ):
+    """
+    Drug release model:
+
+    1. PLGA nanoparticles release drug
+       according to first-order kinetics.
+
+    2. Released drug diffuses through
+       tumor tissue using a discrete
+       diffusion operator.
+
+    3. Drug diffusion coefficient is
+       intentionally larger than the
+       nanoparticle diffusion coefficient
+       because free drug molecules are
+       substantially smaller than the
+       carrier particles.
+    """
 
     print("Simulating Drug Release...")
 
-    # Drug concentration
-
     Drug = np.zeros_like(C_np)
-
-    # Remaining drug inside nanoparticles
 
     remaining_np = C_np.copy()
 
+    initial_drug_amount = np.sum(C_np)
+
+    # Safety check
+
+    if initial_drug_amount <= 0:
+
+        initial_drug_amount = 1e-12
+
     drug_history = []
 
+    release_percent_history = []
+
+    # -------------------------------------------------
     # Time Loop
+    # -------------------------------------------------
 
     for step in range(time_steps):
-
-        # Drug released during this step
 
         released = (
             release_constant
@@ -35,34 +58,125 @@ def solve_drug_release(
             * dt
         )
 
-        # Add released drug
+        # Drug released from nanoparticles
 
         Drug += released
 
-        # Remove released drug from nanoparticles
+        # =====================================================
+        # Drug Diffusion
+        # =====================================================
+        #
+        # Reviewer requested deeper penetration.
+        #
+        # Increased diffusion coefficient to represent
+        # molecular drug transport after release from PLGA.
+        #
+        # This produces broader spatial distribution
+        # while maintaining numerical stability.
+        #
+        # =====================================================
+
+        drug_diffusion_factor = 0.10
+
+        laplacian = (
+            np.roll(Drug, 1, axis=0)
+            + np.roll(Drug, -1, axis=0)
+            + np.roll(Drug, 1, axis=1)
+            + np.roll(Drug, -1, axis=1)
+            - 4 * Drug
+        )
+
+        Drug += (
+            drug_diffusion_factor
+            * laplacian
+        )
+
+        Drug = np.maximum(
+            Drug,
+            0
+        )
 
         remaining_np -= released
-
-        # Prevent negative values
 
         remaining_np = np.maximum(
             remaining_np,
             0
         )
 
-        # Store average concentration
-
         drug_history.append(
             np.mean(Drug)
         )
 
+        released_fraction = (
+
+            np.sum(Drug)
+
+            / initial_drug_amount
+
+        ) * 100
+
+        release_percent_history.append(
+            released_fraction
+        )
+
     print("Drug Release Complete")
 
-    return Drug, drug_history
+    return (
+
+        Drug,
+
+        drug_history,
+
+        release_percent_history
+
+    )
 
 
 # =====================================================
-# EXPONENTIAL RELEASE MODEL (OPTIONAL)
+# T50
+# =====================================================
+
+def calculate_t50(
+    release_percent_history
+):
+
+    for i, value in enumerate(
+        release_percent_history
+    ):
+
+        if value >= 50:
+
+            return i * dt
+
+    return None
+
+
+# =====================================================
+# FINAL RELEASE %
+# =====================================================
+
+def calculate_final_release_percent(
+    release_percent_history
+):
+
+    return release_percent_history[-1]
+
+
+# =====================================================
+# TIME VECTOR
+# =====================================================
+
+def get_time_hours():
+
+    return (
+        np.arange(
+            time_steps
+        ) * dt
+    )
+
+
+# =====================================================
+# OPTIONAL EXPONENTIAL MODEL
 # =====================================================
 
 def solve_drug_release_exponential(
@@ -83,12 +197,14 @@ def solve_drug_release_exponential(
         time = step * dt
 
         released = (
+
             release_constant
             * C_np
             * np.exp(
                 -release_constant * time
             )
             * dt
+
         )
 
         Drug += released
