@@ -38,9 +38,9 @@ Implemented studies:
 
 ## Pressure
 
-\[
+```math
 \nabla^2P = 0
-\]
+```
 
 Outputs
 
