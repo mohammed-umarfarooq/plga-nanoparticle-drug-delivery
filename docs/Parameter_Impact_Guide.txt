@@ -1,0 +1,497 @@
+=========================================================
+PLGA NANOPARTICLE DRUG DELIVERY SIMULATION
+PARAMETER IMPACT GUIDE
+=========================================================
+
+This document describes the role of each model parameter,
+its effect on the simulation, and which results are most
+strongly influenced.
+
+=========================================================
+1. DOMAIN PARAMETERS
+=========================================================
+
+Lx = Tumor Length (mm)
+Ly = Tumor Width (mm)
+
+Increase
+
+• Larger computational domain
+• Longer nanoparticle travel distance
+• Increased simulation time
+
+Decrease
+
+• Smaller tumor domain
+• Faster computation
+• Reduced penetration distance
+
+Affects
+
+Pressure
+Velocity
+Transport
+
+=========================================================
+2. GRID RESOLUTION
+=========================================================
+
+Nx = Grid Points (X)
+
+Ny = Grid Points (Y)
+
+Increase
+
+• Higher numerical accuracy
+• Smoother contour plots
+• Better gradients
+• Longer runtime
+
+Decrease
+
+• Faster simulation
+• Lower spatial resolution
+
+Affects
+
+All Results
+
+=========================================================
+3. DIFFUSION COEFFICIENT
+=========================================================
+
+D (m²/s)
+
+Increase
+
+• Faster nanoparticle diffusion
+• Greater penetration depth
+• More uniform drug distribution
+
+Decrease
+
+• More localized nanoparticles
+• Reduced penetration
+
+Strongly affects
+
+Result 1
+
+Result 4
+
+Result 6
+
+=========================================================
+4. HYDRAULIC CONDUCTIVITY
+=========================================================
+
+K
+
+Increase
+
+• Stronger interstitial flow
+• Higher convection
+• Faster nanoparticle transport
+
+Decrease
+
+• Diffusion-dominated transport
+• Reduced convection
+
+Affects
+
+Pressure Field
+
+Velocity Field
+
+Transport
+
+=========================================================
+5. CELLULAR UPTAKE RATE
+=========================================================
+
+uptake_rate
+
+Increase
+
+• Faster cellular absorption
+• Lower penetration depth
+• Less drug reaches deep tissue
+
+Decrease
+
+• Higher penetration
+• Greater nanoparticle spread
+
+Strongly affects
+
+Result 1
+
+Result 5
+
+=========================================================
+6. DRUG RELEASE RATE
+=========================================================
+
+release_rate
+
+Increase
+
+• Faster drug release
+• Higher early drug concentration
+• Greater tumor reduction
+
+Decrease
+
+• Slower release
+• Longer sustained delivery
+• Reduced early therapeutic effect
+
+Strongly affects
+
+Result 2
+
+Result 5
+
+Result 6
+
+=========================================================
+7. INTERSTITIAL FLUID PRESSURE
+=========================================================
+
+IFP (mmHg)
+
+Increase
+
+• Reduced effective convection
+• Lower nanoparticle penetration
+• Reduced average drug concentration
+• Higher remaining tumor volume
+
+Decrease
+
+• Improved penetration
+• Better drug delivery
+
+Strongly affects
+
+Result 3
+
+=========================================================
+8. TUMOR GROWTH RATE
+=========================================================
+
+growth_rate
+
+Increase
+
+• Faster tumor expansion
+• More difficult treatment
+• Lower reduction percentage
+
+Decrease
+
+• Slower tumor growth
+• Easier treatment
+
+Affects
+
+Tumor Growth
+
+Result 5
+
+=========================================================
+9. DRUG EFFICACY
+=========================================================
+
+drug_efficacy
+
+Increase
+
+• Greater cell killing
+• Larger tumor reduction
+• Better treatment outcome
+
+Decrease
+
+• Reduced therapeutic response
+
+Strongly affects
+
+Result 2
+
+Result 5
+
+Result 6
+
+=========================================================
+10. CARRYING CAPACITY
+=========================================================
+
+carrying_capacity
+
+Increase
+
+• Larger maximum tumor size
+
+Decrease
+
+• Earlier saturation
+
+Affects
+
+Tumor Growth
+
+=========================================================
+11. TIME STEP
+=========================================================
+
+dt
+
+Increase
+
+• Faster simulation
+• Reduced numerical stability
+
+Decrease
+
+• Better stability
+• Longer runtime
+
+Affects
+
+Entire Simulation
+
+=========================================================
+12. NUMBER OF TIME STEPS
+=========================================================
+
+time_steps
+
+Increase
+
+• Longer simulation
+• Greater drug release
+• More tumor response
+
+Decrease
+
+• Shorter treatment duration
+
+Affects
+
+Drug Release
+
+Tumor Growth
+
+=========================================================
+RESULT 1
+Particle Size Study
+=========================================================
+
+Primary Parameters
+
+• Particle Size
+
+• Diffusion Coefficient
+
+• Cellular Uptake
+
+Expected Trend
+
+Smaller particles
+
+↓
+
+Higher diffusion
+
+↓
+
+Greater penetration depth
+
+=========================================================
+RESULT 2
+Drug Release Study
+=========================================================
+
+Primary Parameters
+
+• Release Rate
+
+• Drug Efficacy
+
+• Growth Rate
+
+Expected Trend
+
+Higher release rate
+
+↓
+
+Higher drug concentration
+
+↓
+
+Greater tumor reduction
+
+=========================================================
+RESULT 3
+Interstitial Fluid Pressure Study
+=========================================================
+
+Primary Parameter
+
+IFP
+
+Expected Trend
+
+Higher IFP
+
+↓
+
+Lower transport
+
+↓
+
+Lower penetration
+
+↓
+
+Lower drug concentration
+
+↓
+
+Higher remaining tumor volume
+
+=========================================================
+RESULT 4
+Diffusion Study
+=========================================================
+
+Primary Parameter
+
+Diffusion Coefficient
+
+Expected Trend
+
+Higher diffusion
+
+↓
+
+Higher penetration depth
+
+↓
+
+Higher average concentration
+
+=========================================================
+RESULT 5
+Sensitivity Analysis
+=========================================================
+
+Parameters Compared
+
+• Particle Size
+
+• Diffusion
+
+• Release Rate
+
+• Drug Uptake
+
+• Tumor Growth
+
+• Drug Efficacy
+
+Purpose
+
+Identify which parameters have the greatest influence on treatment performance.
+
+=========================================================
+RESULT 6
+Nanoparticle Optimization
+=========================================================
+
+Optimization Variables
+
+• Particle Size
+
+• Release Rate
+
+• Diffusion Coefficient
+
+Objective
+
+Maximize
+
+Drug Delivery
+
+Minimize
+
+Remaining Tumor Volume
+
+Output
+
+• Heatmap
+
+• Surface Plot
+
+• Best Nanoparticle Design
+
+=========================================================
+SAFE PARAMETER RANGES
+=========================================================
+
+Diffusion
+
+1e−9 – 1e−7 m²/s
+
+Hydraulic Conductivity
+
+1e−14 – 1e−12
+
+Cell Uptake
+
+0.01 – 0.10
+
+Release Rate
+
+0.01 – 0.20
+
+Drug Efficacy
+
+0.30 – 1.00
+
+Growth Rate
+
+0.01 – 0.05
+
+IFP
+
+5 – 30 mmHg
+
+Time Steps
+
+200 – 500
+
+=========================================================
+CURRENT RECOMMENDED SETTINGS
+=========================================================
+
+These values provide stable numerical behavior and physically meaningful trends across Results 1–6.
+
+• Diffusion Coefficient = Model Default
+
+• Hydraulic Conductivity = Model Default
+
+• Uptake Rate = Model Default
+
+• Release Rate = Model Default
+
+• Drug Efficacy = Model Default
+
+• Growth Rate = Model Default
+
+• Time Step = Model Default
+
+• Number of Time Steps = Model Default

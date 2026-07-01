@@ -1,0 +1,135 @@
+=========================================================
+PLGA NANOPARTICLE DRUG DELIVERY SIMULATION
+EXECUTION FLOW
+=========================================================
+
+main.py
+    │
+    ▼
+solver.py
+    │
+    ├─────────────────────────────────────────────┐
+    │                                             │
+    ▼                                             ▼
+pressure_model.py                          parameters.py
+    │
+    ▼
+Pressure Distribution
+    │
+    ▼
+Velocity Field (Darcy's Law)
+    │
+    ▼
+transport_model.py
+    │
+    ▼
+Nanoparticle Transport
+(Diffusion + Convection + Uptake)
+    │
+    ▼
+drug_release.py
+    │
+    ▼
+Controlled PLGA Drug Release
+    │
+    ▼
+tumor_growth.py
+    │
+    ▼
+Tumor Growth & Drug Response
+    │
+    ▼
+visualization.py
+    │
+    ▼
+Generate Figures
+CSV Files
+TXT Reports
+    │
+    ├───────────────────────────────────────────────┐
+    │                                               │
+    ▼                                               ▼
+Result 1                                      Result 2
+Particle Size Study                           Release Rate Study
+    │                                               │
+    ├───────────────────────────────────────────────┤
+    ▼                                               ▼
+Result 3                                      Result 4
+IFP Study                                     Diffusion Study
+    │                                               │
+    ├───────────────────────────────────────────────┤
+    ▼                                               ▼
+Result 5                                      Result 6
+Sensitivity Analysis                          Nanoparticle Optimization
+    │
+    ▼
+results/
+    │
+    ├── pressure/
+    ├── transport/
+    ├── drug/
+    ├── tumor/
+    ├── result1/
+    ├── result2/
+    ├── result3/
+    ├── result4/
+    ├── result5/
+    └── result6/
+
+=========================================================
+FINAL OUTPUTS
+=========================================================
+
+• Pressure Contours
+• Velocity Fields
+• Nanoparticle Concentration Maps
+• Drug Release Curves
+• Tumor Growth Curves
+• Result 1 Figures
+• Result 2 Figures
+• Result 3 Figures
+• Result 4 Figures
+• Result 5 Figures
+• Result 6 Figures
+• CSV Summary Files
+• TXT Summary Files
+
+=========================================================
+PROJECT PIPELINE
+=========================================================
+
+Tumor Geometry
+
+↓
+
+Pressure Solver
+
+↓
+
+Velocity Solver
+
+↓
+
+Nanoparticle Transport
+
+↓
+
+Drug Release
+
+↓
+
+Tumor Growth
+
+↓
+
+Results 1–6
+
+↓
+
+Visualization
+
+↓
+
+CSV / TXT Export
+
+=========================================================
