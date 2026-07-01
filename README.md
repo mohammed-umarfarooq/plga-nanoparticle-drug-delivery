@@ -40,7 +40,7 @@ Implemented studies:
 
 ```math
 \nabla^2P = 0
-```
+
 
 Outputs
 
@@ -53,9 +53,7 @@ Outputs
 
 Darcy's Law
 
-\[
 \mathbf{v}=-K\nabla P
-\]
 
 Outputs
 
