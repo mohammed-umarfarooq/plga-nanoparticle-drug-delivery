@@ -40,7 +40,7 @@ Implemented studies:
 
 ```math
 \nabla^2P = 0
-
+```
 
 Outputs
 
@@ -52,9 +52,9 @@ Outputs
 ## Velocity
 
 Darcy's Law
-
+```math
 \mathbf{v}=-K\nabla P
-
+```
 Outputs
 
 - Velocity field
@@ -64,16 +64,9 @@ Outputs
 
 ## Nanoparticle Transport
 
-\[
-\frac{\partial C}{\partial t}
-=
-D\nabla^2C
--
-\mathbf{v}\cdot\nabla C
--
-k_uC
-\]
-
+```math
+\frac{\partial C}{\partial t} = D\nabla^2C - \mathbf{v}\cdot\nabla C - k_uC
+```
 Transport mechanisms
 
 - Diffusion
@@ -101,14 +94,9 @@ Outputs
 
 ## Tumor Growth
 
-\[
-\frac{dN}{dt}
-=
-rN
-\left(1-\frac{N}{K}\right)
--
-\alpha DN
-\]
+```math
+\frac{dN}{dt} = rN \left(1-\frac{N}{K}\right) - \alpha DN
+```
 
 Outputs
 
