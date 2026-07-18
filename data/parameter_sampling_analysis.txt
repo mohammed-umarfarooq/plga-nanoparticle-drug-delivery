@@ -1,0 +1,46 @@
+Parameter Sampling Analysis
+===========================
+
+Sampling strategy
+-----------------
+Candidate parameters are sampled inside the declared generator ranges using Latin Hypercube Sampling when SciPy is available. The Phase 1 equations are not changed.
+
+Parameter distributions
+-----------------------
+particle_size_nm: declared range [20, 200], observed min 20.0195172338, max 199.934502909, mean 112.341373022, std 57.3708020404
+drug_diffusion: declared range [1e-10, 1e-08], observed min 1.02257245048e-10, max 9.99787028538e-09, mean 5.27600680517e-09, std 3.16742067061e-09
+np_diffusion: declared range [1e-10, 1e-08], observed min 1.05682696772e-10, max 9.98172310125e-09, mean 5.28869319776e-09, std 3.20854070892e-09
+release_rate: declared range [0.01, 0.2], observed min 0.0101563494343, max 0.19999539941, mean 0.122463792829, std 0.0543771422417
+uptake_rate: declared range [0.01, 0.1], observed min 0.0100051102072, max 0.0999614202227, mean 0.051773802855, std 0.0295214314286
+drug_loading: declared range [0.2, 1], observed min 0.200021293459, max 0.999735380959, mean 0.627669836232, std 0.258114545539
+tumor_growth_rate: declared range [0.01, 0.05], observed min 0.0100073253165, max 0.0499864916269, mean 0.0244859818651, std 0.0117627606824
+drug_efficacy: declared range [0.3, 1], observed min 0.302936037564, max 0.999977307729, mean 0.753876681658, std 0.198692305978
+
+Correlation with target
+-----------------------
+particle_size_nm: Pearson r = -0.037616
+drug_diffusion: Pearson r = -0.021500
+np_diffusion: Pearson r = 0.002165
+release_rate: Pearson r = 0.187232
+uptake_rate: Pearson r = -0.005934
+drug_loading: Pearson r = -0.000027
+tumor_growth_rate: Pearson r = -0.387154
+drug_efficacy: Pearson r = 0.434001
+
+Joint and interaction analysis
+------------------------------
+The tumor-growth equation contains a positive logistic growth term controlled by tumor_growth_rate and a negative drug-killing term controlled by drug_efficacy multiplied by the model-computed drug effect. The drug effect is driven by nanoparticle concentration, drug_loading, and release_rate. Therefore high growth combined with low effective exposure is expected to produce large negative tumor reduction values without being numerically invalid.
+Derived exposure proxy used for analysis only: release_rate * drug_loading * drug_efficacy. This is not a filtering threshold; it mirrors factors that increase drug killing in the Phase 1 equations.
+Exposure proxy: min 0.00281216153348, max 0.173897900858, mean 0.0572054021362
+Growth/exposure ratio: min 0.0637110592882, max 4.93903762727, mean 0.717802132777
+Correlation of exposure proxy with target: 0.303840
+Correlation of growth/exposure ratio with target: -0.459885
+
+Unrealistic parameter combinations
+----------------------------------
+No additional interaction-based rejection rule is introduced, because no extra interaction threshold is present in the Phase 1 equations or parameters.py. The worst target values are reported for traceability instead.
+Worst 20 model-consistent rows: 20
+
+Recommended improvements
+------------------------
+Keep the current broad sampling space for scientific consistency, but treat extreme-growth regions carefully in downstream ML by using stratified validation, robust metrics, target transforms, or sample weighting. Do not remove model-consistent extremes inside dataset generation.

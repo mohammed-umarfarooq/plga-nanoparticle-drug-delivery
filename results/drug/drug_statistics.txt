@@ -1,0 +1,15 @@
+Drug Statistics
+===============
+
+Peak Drug Concentration : 0.024144
+Minimum Drug Concentration : 0.000122
+Average Drug Concentration : 0.019501
+Tmax Drug : 99.90 h
+Final Release Percent : 99.33%
+This value is consistent with the initial nanoparticle drug loading.
+
+Scientific observations:
+Final release approaches complete drug availability from the initial nanoparticle loading.
+
+Short interpretation:
+Effective release is maintained throughout the simulation period.

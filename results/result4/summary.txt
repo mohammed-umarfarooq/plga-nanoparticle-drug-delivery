@@ -1,0 +1,38 @@
+Effect of Diffusion Coefficient
+==============================
+
+Simulation parameters: diffusion coefficients were swept from 0.5 to 1.5 times the base D.
+
+Maximum value: 0.028485 kg/m^3
+Minimum value: 0.018010 kg/m^3
+Average value: 0.023781 kg/m^3
+
+Diffusion Coefficient = 2.500e-08 m^2/s
+  Average Concentration : 0.018010 kg/m^3
+  Maximum Concentration : 1.000000 kg/m^3
+  Penetration Depth : 2.45 mm
+
+Diffusion Coefficient = 3.750e-08 m^2/s
+  Average Concentration : 0.021521 kg/m^3
+  Maximum Concentration : 1.000000 kg/m^3
+  Penetration Depth : 2.65 mm
+
+Diffusion Coefficient = 5.000e-08 m^2/s
+  Average Concentration : 0.024306 kg/m^3
+  Maximum Concentration : 1.000000 kg/m^3
+  Penetration Depth : 3.06 mm
+
+Diffusion Coefficient = 6.250e-08 m^2/s
+  Average Concentration : 0.026585 kg/m^3
+  Maximum Concentration : 1.000000 kg/m^3
+  Penetration Depth : 3.27 mm
+
+Diffusion Coefficient = 7.500e-08 m^2/s
+  Average Concentration : 0.028485 kg/m^3
+  Maximum Concentration : 1.000000 kg/m^3
+  Penetration Depth : 3.27 mm
+
+Scientific observations:
+Higher diffusion coefficients lead to deeper penetration and higher average nanoparticle concentrations.
+Short interpretation:
+Diffusion strengthens spatial spreading without changing the model equations.

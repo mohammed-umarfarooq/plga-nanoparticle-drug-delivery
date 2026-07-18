@@ -1,0 +1,81 @@
+{
+  "acceptance_rate": 0.5777007510109763,
+  "column_names": [
+    "particle_size_nm",
+    "drug_diffusion",
+    "np_diffusion",
+    "release_rate",
+    "uptake_rate",
+    "drug_loading",
+    "tumor_growth_rate",
+    "drug_efficacy",
+    "average_pressure",
+    "maximum_pressure",
+    "average_velocity",
+    "maximum_velocity",
+    "penetration_depth_mm",
+    "average_np_concentration",
+    "maximum_np_concentration",
+    "average_drug_concentration",
+    "maximum_drug_concentration",
+    "initial_tumor_volume",
+    "final_tumor_volume",
+    "tumor_reduction_percent"
+  ],
+  "future_extension_columns": {
+    "drug_diffusion": "Recorded for future model extension only. The validated Phase 1 drug-release solver does not expose a drug diffusion coefficient, so this column does not influence current simulation outputs."
+  },
+  "generation_timestamp": "2026-07-18T17:31:50.998360+00:00",
+  "generator_version": "4.0.0-quality-gated",
+  "model_derived_filtering_rules": {
+    "finite_outputs": "all generated numeric values must be finite.",
+    "maximum_tumor_volume": "final_tumor_volume must not exceed carrying_capacity=20000000, the logistic-growth capacity in parameters.py.",
+    "nonnegative_final_tumor_volume": "solve_tumor_growth clamps negative tumor populations to zero.",
+    "parameter_ranges": "candidate parameters must remain inside PARAMETER_RANGES.",
+    "positive_initial_tumor_volume": "tumor_statistics passes initial_cells to validate_positive.",
+    "target_policy": "tumor_reduction_percent is never clipped and is not rejected solely because it is negative."
+  },
+  "number_of_accepted_samples": 1000,
+  "number_of_rejected_samples": 731,
+  "number_of_requested_samples": 1000,
+  "parameter_ranges": {
+    "drug_diffusion": {
+      "maximum": 1e-08,
+      "minimum": 1e-10
+    },
+    "drug_efficacy": {
+      "maximum": 1.0,
+      "minimum": 0.3
+    },
+    "drug_loading": {
+      "maximum": 1.0,
+      "minimum": 0.2
+    },
+    "np_diffusion": {
+      "maximum": 1e-08,
+      "minimum": 1e-10
+    },
+    "particle_size_nm": {
+      "maximum": 200.0,
+      "minimum": 20.0
+    },
+    "release_rate": {
+      "maximum": 0.2,
+      "minimum": 0.01
+    },
+    "tumor_growth_rate": {
+      "maximum": 0.05,
+      "minimum": 0.01
+    },
+    "uptake_rate": {
+      "maximum": 0.1,
+      "minimum": 0.01
+    }
+  },
+  "random_seed": 42,
+  "rejection_counts_by_category": {
+    "Treatment failure": 731
+  },
+  "sampling_method": "Latin Hypercube Sampling (SciPy) with model-derived diverse subset selection",
+  "simulation_version": "Phase 1 validated model"
+}

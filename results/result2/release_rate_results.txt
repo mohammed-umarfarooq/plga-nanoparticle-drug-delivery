@@ -1,0 +1,74 @@
+Release Rate Study
+==================
+
+Slow Release
+-----------------
+Initial Cells : 1000000.00
+Final Cells : 374882.86
+Peak Tumor Size : 1183465.55
+Peak Time : 16.40 h
+Regression Start : 16.40 h
+Tumor Reduction : 62.51%
+t50 : 34.60 h
+Final Release : 86.49%
+
+Interpretation:
+Initial tumor growth occurs because the drug effect builds gradually over time. During the early phase, tumor proliferation exceeds drug-induced cell killing. After sufficient drug accumulation, cell killing dominates and tumor regression begins.
+
+Release Rate Interpretation:
+Faster release rates reduce the time required to reach therapeutic drug concentrations, resulting in earlier tumor regression and greater overall tumor reduction.
+
+
+Medium Release
+-----------------
+Initial Cells : 1000000.00
+Final Cells : 101259.04
+Peak Tumor Size : 1118803.17
+Peak Time : 10.30 h
+Regression Start : 10.30 h
+Tumor Reduction : 89.87%
+t50 : 13.80 h
+Final Release : 99.33%
+
+Interpretation:
+Initial tumor growth occurs because the drug effect builds gradually over time. During the early phase, tumor proliferation exceeds drug-induced cell killing. After sufficient drug accumulation, cell killing dominates and tumor regression begins.
+
+Release Rate Interpretation:
+Faster release rates reduce the time required to reach therapeutic drug concentrations, resulting in earlier tumor regression and greater overall tumor reduction.
+
+
+Fast Release
+-----------------
+Initial Cells : 1000000.00
+Final Cells : 54957.43
+Peak Tumor Size : 1099776.53
+Peak Time : 8.60 h
+Regression Start : 8.60 h
+Tumor Reduction : 94.50%
+t50 : 6.80 h
+Final Release : 100.00%
+
+Interpretation:
+Initial tumor growth occurs because the drug effect builds gradually over time. During the early phase, tumor proliferation exceeds drug-induced cell killing. After sufficient drug accumulation, cell killing dominates and tumor regression begins.
+
+Release Rate Interpretation:
+Faster release rates reduce the time required to reach therapeutic drug concentrations, resulting in earlier tumor regression and greater overall tumor reduction.
+
+
+Summary Table
+=============
+
+Case      t50(h)      Final Release %     Tumor Reduction %   
+--------------------------------------------------------------
+Slow      34.60       86.49               62.51               
+Medium    13.80       99.33               89.87               
+Fast      6.80        100.00              94.50               
+
+Release Constant Justification:
+Slow  : k = 0.02 h^-1
+Medium: k = 0.05 h^-1
+Fast  : k = 0.10 h^-1
+
+These values represent slow, intermediate and rapid PLGA degradation/release scenarios used for sensitivity analysis of controlled drug delivery systems.
+
+Higher release constants produce faster drug availability, smaller t50 values and stronger tumor regression.

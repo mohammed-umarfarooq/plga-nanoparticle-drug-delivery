@@ -1,0 +1,24 @@
+Particle Size Study
+===================
+
+Penetration Depth Criterion:
+Distance where concentration falls below 5% of maximum concentration.
+
+Particle Size : 50 nm
+Diffusion Coefficient : 1.000e-07 m²/s
+Penetration Depth : 3.67 mm
+Maximum Concentration : 1.000000
+Average Concentration : 0.031458
+
+Particle Size : 100 nm
+Diffusion Coefficient : 5.000e-08 m²/s
+Penetration Depth : 3.06 mm
+Maximum Concentration : 1.000000
+Average Concentration : 0.024306
+
+Particle Size : 200 nm
+Diffusion Coefficient : 2.500e-08 m²/s
+Penetration Depth : 2.45 mm
+Maximum Concentration : 1.000000
+Average Concentration : 0.018010
+

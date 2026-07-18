@@ -1,0 +1,42 @@
+{
+  "model": "XGBRegressor",
+  "target": "tumor_reduction_percent",
+  "training_samples": 800,
+  "testing_samples": 200,
+  "training_metrics": {
+    "r2_score": 0.995386824766445,
+    "mean_squared_error": 3.3517023976537725,
+    "root_mean_squared_error": 1.8307655223031083,
+    "mean_absolute_error": 1.3554667943216712,
+    "explained_variance_score": 0.9953869042198593,
+    "maximum_absolute_error": 7.298267687942539
+  },
+  "testing_metrics": {
+    "r2_score": 0.9510753891059616,
+    "mean_squared_error": 42.964173813255584,
+    "root_mean_squared_error": 6.554706233940281,
+    "mean_absolute_error": 4.439943680077927,
+    "explained_variance_score": 0.9531488497435638,
+    "maximum_absolute_error": 30.880091801627344
+  },
+  "test_residual_analysis": {
+    "mean_residual": -1.3493898523426098,
+    "median_residual": -0.379878982262305,
+    "residual_standard_deviation": 6.4304021021728115,
+    "residual_variance": 41.35007119562851,
+    "minimum_residual": -30.880091801627344,
+    "maximum_residual": 15.713393727642966,
+    "residual_range": 46.59348552927031,
+    "mean_absolute_residual": 4.439943680077927,
+    "absolute_residual_prediction_correlation": -0.5996942575928859,
+    "absolute_residual_correlation_p_value": 6.423859912134984e-21,
+    "bias_assessment": "Negative mean residual bias: predictions tend to be high.",
+    "heteroscedasticity_assessment": "Potential heteroscedasticity: absolute residuals vary with prediction level.",
+    "systematic_error_assessment": "Residual diagnostics indicate a possible systematic prediction pattern."
+  },
+  "generalization": {
+    "r2_gap_train_minus_test": 0.044311435660483456,
+    "rmse_ratio_test_to_train": 3.5803089768123018,
+    "assessment": "Overfitting is indicated by materially weaker held-out performance."
+  }
+}

@@ -1,0 +1,57 @@
+SHAP Explainability Report
+==========================
+
+Model and dataset
+-----------------
+Model: XGBRegressor loaded from models/xgboost_model.pkl
+Dataset: data/X_test.csv (held-out test features)
+Explained samples: 200
+Explained features: 8
+Target: tumor_reduction_percent
+Features: independent formulation and model inputs only; target-derived simulation outputs are excluded.
+Dependence-plot axes use restored physical units from the training preprocessing pipeline.
+
+Global feature ranking (mean absolute SHAP value)
+---------------------------------------------------
+- tumor_growth_rate: 18.761878
+- drug_efficacy: 15.751940
+- release_rate: 8.771739
+- nanoparticle_diffusion: 0.795760
+- uptake_rate: 0.776473
+- drug_loading: 0.402275
+- particle_size_nm: 0.273942
+- drug_diffusion: 0.258103
+
+Interpretation of requested dependence features
+----------------------------------------------
+- particle_size_nm: higher feature values are associated with higher model contributions on this test set (feature-SHAP correlation=0.249).
+- release_rate: higher feature values are associated with higher model contributions on this test set (feature-SHAP correlation=0.775).
+
+Local explanations
+------------------
+Waterfall plots were generated for lowest, highest, median, and two intermediate predictions:
+- Test sample 122: prediction=13.051144, sum of SHAP contributions=-53.630678
+- Test sample 177: prediction=103.074432, sum of SHAP contributions=36.392667
+- Test sample 23: prediction=74.489067, sum of SHAP contributions=7.807310
+- Test sample 176: prediction=41.632313, sum of SHAP contributions=-25.049498
+- Test sample 71: prediction=91.008087, sum of SHAP contributions=24.326266
+Each waterfall plot decomposes one model prediction into its baseline output and feature contributions.
+
+Release-rate SHAP outlier review
+-------------------------------
+IQR-rule outliers recorded: 22
+The outlier table records original release-rate and drug-loading values so unusual contributions can be checked against modeled parameter bounds.
+
+Interpretation limits and optimization readiness
+-----------------------------------------------
+SHAP explains the trained model's learned associations, not the underlying biological system.
+These feature attributions do not establish causality or validate biological mechanisms.
+The global ranking and local contribution patterns are suitable inputs for the subsequent optimization module, subject to domain review and constraint handling.
+
+Generated figures
+-----------------
+- SHAP_Summary_Plot.png: distribution, direction, and magnitude of feature contributions across the test set.
+- SHAP_Feature_Importance_Bar_Plot.png: mean absolute SHAP ranking of global feature importance.
+- SHAP_Waterfall_Sample_*.png: feature-by-feature decomposition of five representative predictions.
+- SHAP_Dependence_particle_size_nm.png: particle-size dependence in nm, coloured by drug loading.
+- SHAP_Dependence_release_rate.png: release-rate dependence in 1/h, coloured by drug loading.

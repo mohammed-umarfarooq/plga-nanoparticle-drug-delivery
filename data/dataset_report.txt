@@ -1,0 +1,44 @@
+Dataset Quality Report
+======================
+
+Requested samples: 1000
+Accepted samples: 1000
+Rejected samples: 731
+Missing values: 0
+Infinite values: 0
+
+Filtering rules:
+- Numerical instability: reject simulation failures, NaN, and Inf outputs.
+- Parameter ranges: reject candidates outside the declared sampling ranges.
+- Invalid outputs: reject non-positive initial tumor volume and negative final tumor volume.
+- Invalid biological outputs: reject final tumor volume above carrying_capacity=20000000, the logistic-growth capacity defined in parameters.py.
+- Duplicate parameters: reject repeated parameter combinations.
+- Target policy: reject therapies that increase tumor volume so accepted rows have non-negative tumor reduction.
+
+Rejected samples by category:
+- Treatment failure: 731
+
+Parameter ranges:
+- particle_size_nm: 20 to 200
+- drug_diffusion: 1e-10 to 1e-08
+- np_diffusion: 1e-10 to 1e-08
+- release_rate: 0.01 to 0.2
+- uptake_rate: 0.01 to 0.1
+- drug_loading: 0.2 to 1
+- tumor_growth_rate: 0.01 to 0.05
+- drug_efficacy: 0.3 to 1
+
+Future extension columns:
+- drug_diffusion: Recorded for future model extension only. The validated Phase 1 drug-release solver does not expose a drug diffusion coefficient, so this column does not influence current simulation outputs.
+
+Target statistics:
+- Minimum tumor reduction: 0.233439
+- Maximum tumor reduction: 95.000000
+- Mean tumor reduction: 66.205883
+- Median tumor reduction: 75.091806
+- Standard deviation: 27.521620
+
+Dataset generation time: 454.19 seconds
+Average accepted simulation time: 0.26 seconds
+
+Dataset validation: PASSED

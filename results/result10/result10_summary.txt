@@ -1,0 +1,24 @@
+Result 10: Leakage-Free Parameter Optimization
+===============================================
+
+This result uses the retrained XGBoost model with exactly eight independent formulation inputs. final_tumor_volume and every other simulation output are excluded.
+Every physical-unit candidate is transformed only with the scaler fitted on the training split before prediction.
+
+Particle-size sweep: 50 evenly spaced values from 50 to 200 nm; prediction span = 1.032181%.
+Release-rate sweep: 50 evenly spaced values from 0.01 to 0.20 h^-1; prediction span = 86.725196%.
+Joint heatmap: 2500 combinations; prediction span = 87.818687%.
+Other inputs were held at their processed-dataset median values for the one- and two-way sweeps:
+- particle_size_nm: 114.106
+- drug_diffusion: 5.43166e-09
+- nanoparticle_diffusion: 5.46495e-09
+- release_rate: 0.126327
+- uptake_rate: 0.0506107
+- drug_loading: 0.639797
+- tumor_growth_rate: 0.0215643
+- drug_efficacy: 0.793493
+
+10.4 uses bounded global optimization plus a reproducible 10000-point design pool. It reports ten feasible near-optimal formulations within 5.0% of the best prediction, separated by at least 0.25% in predicted response.
+Predictions above 95% are excluded because the simulation target is capped at this value.
+The particle-size curve may contain tree-model steps because XGBoost is an ensemble of decision trees; no visual smoothing was applied, so every point is a direct model prediction.
+Best candidate predicted tumor reduction: 94.997826%.
+These are surrogate-model estimates; simulation validation remains necessary before selecting a final formulation.

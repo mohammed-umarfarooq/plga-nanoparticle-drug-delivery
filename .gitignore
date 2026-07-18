@@ -1,0 +1,52 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Notebook and IDE state
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local configuration
+.env
+
+# Matplotlib caches
+.matplotlib/
+matplotlib/
+
+# Logs and temporary/interrupted optimization files
+*.log
+*.tmp
+*.temp
+optimization_checkpoint*
+optimization_population_*.npy
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Python version managers
+.python-version
+
+# Miscellaneous editor backups
+*.bak
+*.swp

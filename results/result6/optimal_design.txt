@@ -1,0 +1,6 @@
+Optimal Design Summary
+======================
+
+Best design: Size=40 nm, Release Rate=0.090 h^-1, Diffusion=1.000e-07.
+Objective Score=0.699250
+Unique simulations used=42

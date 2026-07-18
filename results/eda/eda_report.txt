@@ -1,0 +1,238 @@
+Exploratory Data Analysis Report
+===============================
+
+Dataset dimensions
+------------------
+Rows: 1000
+Columns: 12
+
+Feature list
+------------
+- particle_size_nm
+- drug_diffusion
+- nanoparticle_diffusion
+- release_rate
+- uptake_rate
+- drug_loading
+- tumor_growth_rate
+- drug_efficacy
+- penetration_depth
+- average_drug_concentration
+- final_tumor_volume
+
+Target variable
+---------------
+- tumor_reduction_percent
+
+Descriptive statistics
+----------------------
+particle_size_nm:
+  mean=112.341373
+  median=114.106256
+  std=57.399509
+  variance=3294.703630
+  min=20.019517
+  max=199.934503
+  q25=60.681082
+  q50=114.106256
+  q75=165.174070
+
+drug_diffusion:
+  mean=0.000000
+  median=0.000000
+  std=0.000000
+  variance=0.000000
+  min=0.000000
+  max=0.000000
+  q25=0.000000
+  q50=0.000000
+  q75=0.000000
+
+nanoparticle_diffusion:
+  mean=0.000000
+  median=0.000000
+  std=0.000000
+  variance=0.000000
+  min=0.000000
+  max=0.000000
+  q25=0.000000
+  q50=0.000000
+  q75=0.000000
+
+release_rate:
+  mean=0.122464
+  median=0.126327
+  std=0.054404
+  variance=0.002960
+  min=0.010156
+  max=0.199995
+  q25=0.079473
+  q50=0.126327
+  q75=0.170905
+
+uptake_rate:
+  mean=0.051774
+  median=0.050611
+  std=0.029536
+  variance=0.000872
+  min=0.010005
+  max=0.099961
+  q25=0.022805
+  q50=0.050611
+  q75=0.078408
+
+drug_loading:
+  mean=0.627670
+  median=0.639797
+  std=0.258244
+  variance=0.066690
+  min=0.200021
+  max=0.999735
+  q25=0.384994
+  q50=0.639797
+  q75=0.881389
+
+tumor_growth_rate:
+  mean=0.024486
+  median=0.021564
+  std=0.011769
+  variance=0.000139
+  min=0.010007
+  max=0.049986
+  q25=0.013971
+  q50=0.021564
+  q75=0.032606
+
+drug_efficacy:
+  mean=0.753877
+  median=0.793493
+  std=0.198792
+  variance=0.039518
+  min=0.302936
+  max=0.999977
+  q25=0.614920
+  q50=0.793493
+  q75=0.930590
+
+penetration_depth:
+  mean=0.843400
+  median=0.800000
+  std=0.412998
+  variance=0.170567
+  min=0.000000
+  max=1.800000
+  q25=0.600000
+  q50=0.800000
+  q75=1.200000
+
+average_drug_concentration:
+  mean=0.004024
+  median=0.003583
+  std=0.002294
+  variance=0.000005
+  min=0.000617
+  max=0.012433
+  q25=0.002249
+  q50=0.003583
+  q75=0.005316
+
+final_tumor_volume:
+  mean=337941.166015
+  median=249081.935833
+  std=275353.913070
+  variance=75819777442.990128
+  min=50000.000000
+  max=997665.611224
+  q25=90946.226064
+  q50=249081.935833
+  q75=534297.420110
+
+tumor_reduction_percent:
+  mean=66.205883
+  median=75.091806
+  std=27.535391
+  variance=758.197774
+  min=0.233439
+  max=95.000000
+  q25=46.570258
+  q50=75.091806
+  q75=90.905377
+
+Correlation summary
+-------------------
+Strong positive correlations with target:
+- None
+
+Strong negative correlations with target:
+- final_tumor_volume: -1.000
+
+Weakly correlated variables with target:
+- particle_size_nm: -0.038
+- drug_diffusion: -0.021
+- nanoparticle_diffusion: 0.002
+- release_rate: 0.187
+- uptake_rate: -0.006
+- drug_loading: -0.000
+- penetration_depth: 0.009
+- average_drug_concentration: 0.030
+
+Potential multicollinearity pairs (|r| > 0.8):
+- nanoparticle_diffusion / penetration_depth: 0.888
+- uptake_rate / penetration_depth: 0.845
+
+Target correlation ranking
+--------------------------
+- final_tumor_volume: 1.000
+- drug_efficacy: 0.434
+- tumor_growth_rate: 0.387
+- release_rate: 0.187
+- particle_size_nm: 0.038
+- average_drug_concentration: 0.030
+- drug_diffusion: 0.021
+- penetration_depth: 0.009
+- uptake_rate: 0.006
+- nanoparticle_diffusion: 0.002
+- drug_loading: 0.000
+
+Outlier summary
+---------------
+- particle_size_nm: 0 suspected outlier values
+- drug_diffusion: 0 suspected outlier values
+- nanoparticle_diffusion: 0 suspected outlier values
+- release_rate: 0 suspected outlier values
+- uptake_rate: 0 suspected outlier values
+- drug_loading: 0 suspected outlier values
+- tumor_growth_rate: 0 suspected outlier values
+- drug_efficacy: 0 suspected outlier values
+- penetration_depth: 0 suspected outlier values
+- average_drug_concentration: 24 suspected outlier values
+- final_tumor_volume: 0 suspected outlier values
+
+Distribution characteristics
+----------------------------
+- particle_size_nm: left-skewed; range [20.020, 199.935]
+- drug_diffusion: left-skewed; range [0.000, 0.000]
+- nanoparticle_diffusion: left-skewed; range [0.000, 0.000]
+- release_rate: left-skewed; range [0.010, 0.200]
+- uptake_rate: right-skewed; range [0.010, 0.100]
+- drug_loading: left-skewed; range [0.200, 1.000]
+- tumor_growth_rate: right-skewed; range [0.010, 0.050]
+- drug_efficacy: left-skewed; range [0.303, 1.000]
+- penetration_depth: right-skewed; range [0.000, 1.800]
+- average_drug_concentration: right-skewed; range [0.001, 0.012]
+- final_tumor_volume: right-skewed; range [50000.000, 997665.611]
+- tumor_reduction_percent: left-skewed; range [0.233, 95.000]
+
+Figure interpretations
+----------------------
+- Dataset overview table (dataset_overview.png): The dataset contains 1000 samples and 11 input features with no missing values or duplicates, indicating a complete and structurally consistent input set for downstream analysis.
+- Feature histograms (hist_particle_size_nm.png, hist_drug_diffusion.png, hist_nanoparticle_diffusion.png, hist_release_rate.png, hist_uptake_rate.png, hist_drug_loading.png, hist_tumor_growth_rate.png, hist_drug_efficacy.png, hist_penetration_depth.png, hist_average_drug_concentration.png, hist_final_tumor_volume.png): The feature distributions show the spread and shape of each input parameter; any skewness or multimodality suggests that relationships with the target may be nonlinear.
+- Target distribution plots (target_histogram.png, target_kde.png, target_boxplot.png): The target distribution indicates the central tendency and spread of tumor reduction outcomes; the presence of extreme values suggests the target is not perfectly symmetric.
+- Feature box plots (box_particle_size_nm.png, box_drug_diffusion.png, box_nanoparticle_diffusion.png, box_release_rate.png, box_uptake_rate.png, box_drug_loading.png, box_tumor_growth_rate.png, box_drug_efficacy.png, box_penetration_depth.png, box_average_drug_concentration.png, box_final_tumor_volume.png): The box plots highlight potential outliers while preserving all observations, which is useful for judging whether the dataset contains extreme but valid parameter combinations.
+- Pearson correlation heatmap (correlation_pearson.png): Variables with strong positive or negative correlations appear more likely to be associated with the target, while weakly correlated variables may contribute less directly to the target response.
+- Spearman correlation heatmap (correlation_spearman.png): Rank-based relationships are useful for identifying monotonic associations that may not be captured by Pearson correlation alone.
+- Scatter plot matrix (scatter_matrix.png): The pairwise plots indicate whether the most relevant variables show clear linear or nonlinear relationships; visually separated clusters suggest the dataset may be suitable for further supervised learning workflows.
+
+Overall assessment
+------------------
+The processed dataset appears suitable for machine learning analysis because it is complete, contains no duplicate rows, and provides a broad numeric feature space with measurable relationships to the target variable. The analysis is limited to descriptive statistics and visualization, without applying feature engineering or model fitting.

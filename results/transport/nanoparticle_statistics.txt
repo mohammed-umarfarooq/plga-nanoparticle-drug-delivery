@@ -1,0 +1,13 @@
+Nanoparticle Statistics
+=======================
+
+Peak Concentration : 18.695559
+Minimum Concentration : 0.411476
+Average Concentration : 6.825603
+Tmax : 7.80 h
+
+Scientific observations:
+Nanoparticle concentration decreases after Tmax.
+
+Short interpretation:
+After Tmax, nanoparticle concentration decreases due to particle clearance, drug release and cellular uptake.

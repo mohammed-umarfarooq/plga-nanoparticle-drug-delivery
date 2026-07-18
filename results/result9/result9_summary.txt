@@ -1,0 +1,21 @@
+Result 9: SHAP Analysis Summary
+===============================
+
+SHAP values were calculated for the 200 held-out test samples using the retrained XGBoost model.
+The model contains only eight independent formulation and model parameters; final_tumor_volume and all target-derived simulation outputs are excluded.
+
+Global ranking by mean absolute SHAP value
+-------------------------------------------
+- tumor_growth_rate: 18.761878
+- drug_efficacy: 15.751940
+- release_rate: 8.771739
+- nanoparticle_diffusion: 0.795760
+- uptake_rate: 0.776473
+- drug_loading: 0.402275
+- particle_size_nm: 0.273942
+- drug_diffusion: 0.258103
+
+Results 9.3 and 9.4 use physical particle-size and release-rate values rather than standardized z-scores.
+The dependence plots are coloured by drug loading to show a biologically relevant interaction.
+Release-rate SHAP outliers identified by the IQR rule: 22. Details are saved in results/shap/release_rate_shap_outliers.csv.
+SHAP values describe learned model associations and do not establish biological causality.

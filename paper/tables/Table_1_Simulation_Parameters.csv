@@ -1,0 +1,9 @@
+Symbol,Parameter,Min,Max,Unit,Description
+d_p,particle_size_nm,20.0,200.0,nm,Nanoparticle core diameter
+D_d,drug_diffusion,1e-10,1e-08,m^2/s,Drug diffusion coefficient in tissue
+D_np,np_diffusion,1e-10,1e-08,m^2/s,Nanoparticle diffusion coefficient in tissue
+k_rel,release_rate,0.01,0.2,1/h,Drug release rate constant from PLGA core
+k_up,uptake_rate,0.01,0.1,1/h,Nanoparticle cellular uptake rate constant
+L_d,drug_loading,0.2,1.0,-,Nanoparticle drug loading fraction
+r_g,tumor_growth_rate,0.01,0.05,1/h,Baseline tumor cell proliferation rate
+E_d,drug_efficacy,0.3,1.0,-,Drug efficacy scaling coefficient

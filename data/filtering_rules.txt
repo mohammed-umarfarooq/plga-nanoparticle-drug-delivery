@@ -1,0 +1,46 @@
+Filtering Rules
+===============
+
+Principle
+---------
+Filtering follows model assumptions, then derived acceptance criteria, then dataset rejection. No tumor_reduction_percent cutoff is used.
+
+Rule 1: Numerical stability
+Source: finite numerical requirements of the simulation outputs.
+Criterion: reject failed simulations and rows containing NaN or Inf.
+Justification: ML-ready finite-difference outputs must be finite.
+Rejected samples: 0
+
+Rule 2: Declared parameter ranges
+Source: PARAMETER_RANGES in ml/generate_dataset.py.
+Criterion: reject candidates outside the declared sampling ranges.
+Justification: values outside the declared design space are not valid generated candidates.
+Rejected samples: 0
+
+Rule 3: Positive initial tumor population
+Source: src.tumor_growth.calculate_tumor_reduction calls validate_positive(initial_cells).
+Criterion: reject rows with initial_tumor_volume <= 0.
+Justification: tumor_reduction_percent divides by initial tumor population.
+Rejected samples in Invalid outputs category: 0
+
+Rule 4: Nonnegative final tumor population
+Source: src.tumor_growth.solve_tumor_growth clamps negative N to zero.
+Criterion: reject rows with final_tumor_volume < 0.
+Justification: negative cell counts are outside the model state space.
+Rejected samples in Invalid outputs category: 0
+
+Rule 5: Logistic carrying capacity
+Source: carrying_capacity in src/parameters.py and the logistic term growth_rate * N * (1 - N / carrying_capacity).
+Criterion: reject rows with final_tumor_volume > 20000000.
+Justification: carrying_capacity is the upper tumor-population assumption encoded by the model.
+Rejected samples: 0
+
+Rule 6: Duplicate parameter combinations
+Source: dataset design requirement for unique sampled inputs.
+Criterion: reject repeated rounded parameter vectors.
+Justification: duplicate parameter combinations reduce useful ML coverage.
+Rejected samples: 0
+
+Explicit non-rule
+-----------------
+Negative or very large tumor_reduction_percent values are not rejected by themselves. In the Phase 1 equation, negative reduction means final_tumor_volume > initial_tumor_volume. Such rows are kept unless they violate one of the model-derived rules above.

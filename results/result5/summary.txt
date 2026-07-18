@@ -1,0 +1,20 @@
+Sensitivity Analysis
+====================
+
+Parameters were varied by 80%, 100%, and 120%.
+Tumor reduction was calculated directly from simulated tumor volumes.
+
+Particle Size: baseline=101259.04, modified=89073.79, reduction=12.03%
+Diffusion Coefficient: baseline=101259.04, modified=91206.45, reduction=9.93%
+Drug Release Rate: baseline=101259.04, modified=79130.35, reduction=21.85%
+Drug Uptake Rate: baseline=101259.04, modified=94755.00, reduction=6.42%
+Tumor Growth Rate: baseline=101259.04, modified=62729.73, reduction=38.05%
+Drug Efficacy: baseline=101259.04, modified=50000.00, reduction=50.62%
+
+Interpretation:
+Highest influence parameter: Drug Efficacy.
+Lowest influence parameter: Drug Uptake.
+
+The tornado chart ranks parameters by the relative change in final tumor volume caused by parameter variation.
+The spider plot uses fixed normalized sensitivity scaling from 0 to 1.
+The tumor reduction chart compares the best achievable reduction for each parameter.

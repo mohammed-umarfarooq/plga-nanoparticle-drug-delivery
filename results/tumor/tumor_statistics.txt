@@ -1,0 +1,17 @@
+Tumor Statistics
+================
+
+Initial Cells : 1000000.00
+Final Cells : 101259.04
+Peak Tumor Size : 1118803.17
+Minimum Tumor Size : 101259.04
+Average Tumor Size : 579075.99
+Peak Time : 10.30 h
+Regression Start : 10.30 h
+Tumor Reduction : 89.87%
+
+Scientific observations:
+Tumor growth peaks before drug-induced regression dominates.
+
+Short interpretation:
+The simulated drug exposure produces net tumor reduction.

@@ -1,0 +1,26 @@
+Optimal Nanoparticle Design
+===========================
+
+Hierarchical adaptive optimization was used instead of full brute force.
+Total unique simulations: 42
+Unique transport solves: 8
+Unique drug-release solves: 24
+Maximum allowed simulations: 60
+
+Objective score maximizes normalized average drug concentration
+and penalizes normalized final tumor volume.
+
+Equation:
+Score = 0.7 * (Average Drug / (max(Average Drug) + epsilon)) - 0.3 * (Final Tumor / (max(Final Tumor) + epsilon))
+
+Top 10 designs:
+1. Size=40 nm, Release=0.090 h^-1, D=1.000e-07, Average Drug=0.031454, Final Tumor=50000.00, Score=0.699250
+2. Size=40 nm, Release=0.070 h^-1, D=1.000e-07, Average Drug=0.031430, Final Tumor=53368.57, Score=0.698660
+3. Size=60 nm, Release=0.090 h^-1, D=8.333e-08, Average Drug=0.029580, Final Tumor=50869.26, Score=0.657532
+4. Size=60 nm, Release=0.070 h^-1, D=8.333e-08, Average Drug=0.029558, Final Tumor=55566.20, Score=0.656954
+5. Size=60 nm, Release=0.050 h^-1, D=8.333e-08, Average Drug=0.029387, Final Tumor=75490.02, Score=0.652860
+6. Size=80 nm, Release=0.090 h^-1, D=7.500e-08, Average Drug=0.028482, Final Tumor=51889.75, Score=0.633073
+7. Size=80 nm, Release=0.070 h^-1, D=7.500e-08, Average Drug=0.028460, Final Tumor=57080.39, Score=0.632506
+8. Size=60 nm, Release=0.090 h^-1, D=6.667e-08, Average Drug=0.027253, Final Tumor=53153.63, Score=0.605694
+9. Size=60 nm, Release=0.070 h^-1, D=6.667e-08, Average Drug=0.027232, Final Tumor=59036.92, Score=0.605138
+10. Size=60 nm, Release=0.050 h^-1, D=6.667e-08, Average Drug=0.027075, Final Tumor=85800.66, Score=0.601240

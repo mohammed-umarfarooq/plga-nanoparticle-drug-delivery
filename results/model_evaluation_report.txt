@@ -1,0 +1,60 @@
+XGBoost Model Evaluation Report
+===============================
+
+Model information
+-----------------
+Model: XGBRegressor loaded from models/xgboost_model.pkl
+Evaluation method: fresh predictions from the persisted model; no fitting, tuning, or cross-validation performed.
+Training samples: 800
+Testing samples: 200
+
+Training metrics
+----------------
+r2_score: 0.995387
+mean_squared_error: 3.351702
+root_mean_squared_error: 1.830766
+mean_absolute_error: 1.355467
+explained_variance_score: 0.995387
+maximum_absolute_error: 7.298268
+
+Testing metrics
+---------------
+r2_score: 0.951075
+mean_squared_error: 42.964174
+root_mean_squared_error: 6.554706
+mean_absolute_error: 4.439944
+explained_variance_score: 0.953149
+maximum_absolute_error: 30.880092
+
+Generalization assessment
+-------------------------
+Training minus testing R2: 0.044311
+Testing/training RMSE ratio: 3.580309
+Overfitting is indicated by materially weaker held-out performance.
+
+Residual analysis (test dataset)
+---------------------------------
+Mean residual: -1.349390
+Residual standard deviation: 6.430402
+Residual variance: 41.350071
+Residual range: 46.593486
+Absolute residual/prediction correlation: -0.599694
+Correlation p-value: 0.000000
+Negative mean residual bias: predictions tend to be high.
+Potential heteroscedasticity: absolute residuals vary with prediction level.
+Residual diagnostics indicate a possible systematic prediction pattern.
+
+Model strengths
+---------------
+- Uses an independent held-out test set and fresh model predictions.
+- Reports complementary variance, squared-error, absolute-error, and worst-case-error metrics.
+- Includes graphical residual diagnostics for error-pattern inspection.
+
+Model limitations
+-----------------
+- Evaluation is limited to the current simulation data distribution.
+- Feature importance and causal interpretation are outside this evaluation; use SHAP next.
+
+Prediction quality and SHAP readiness
+-------------------------------------
+The held-out metrics and residual diagnostics provide the performance baseline for interpretation. The persisted model is ready for the subsequent SHAP explainability module.

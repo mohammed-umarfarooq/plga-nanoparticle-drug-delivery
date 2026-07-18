@@ -1,0 +1,13 @@
+Dataset Statistics
+==================
+
+Requested Samples: 1000
+Accepted Samples: 1000
+Rejected Samples: 731
+Acceptance Rate: 57.77%
+Minimum Tumor Reduction: 0.233439
+Maximum Tumor Reduction: 95.000000
+Mean Tumor Reduction: 66.205883
+Median: 75.091806
+Standard Deviation: 27.521620
+Generation Time: 454.19 seconds

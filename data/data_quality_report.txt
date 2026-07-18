@@ -1,0 +1,52 @@
+Data Quality Report
+===================
+Source rows: 1000
+Processed rows: 1000
+
+Dataset existence
+-----------------
+- Source dataset present: yes
+- Processed dataset present: yes
+
+Validation checks
+-----------------
+- Correct row count: yes
+- Correct column count: yes
+- Duplicate rows: 0
+- Missing values: 0
+- NaN values: 0
+- Inf values: 0
+- Numerical values only: yes
+- Duplicated parameter combinations: none
+- Consistent units: yes (preserved from source)
+- Original data unchanged: yes
+
+Cleaning operations
+--------------------
+- No duplicate rows were found; no rows were removed.
+- No missing values were found; no imputation was required.
+- No NaN or Inf values were found; no data values were modified.
+- Column renaming and ordering were applied for ML readiness.
+
+Column statistics
+-----------------
+- particle_size_nm: min=20.0195172338, max=199.934502909, mean=112.3413730217096, median=114.1062563025, std=57.37080204039534, unique=1000
+- drug_diffusion: min=1.02257245048e-10, max=9.99787028538e-09, mean=5.2760068051740686e-09, median=5.431656752235e-09, std=3.1674206706085953e-09, unique=1000
+- nanoparticle_diffusion: min=1.05682696772e-10, max=9.98172310125e-09, mean=5.288693197758256e-09, median=5.4649460131950005e-09, std=3.20854070891652e-09, unique=1000
+- release_rate: min=0.0101563494343, max=0.19999539941, mean=0.1224637928286308, median=0.126326753163, std=0.054377142241649086, unique=1000
+- uptake_rate: min=0.0100051102072, max=0.0999614202227, mean=0.0517738028550362, median=0.05061066304405, std=0.029521431428639607, unique=1000
+- drug_loading: min=0.200021293459, max=0.999735380959, mean=0.627669836232288, median=0.639797194781, std=0.25811454553907587, unique=1000
+- tumor_growth_rate: min=0.0100073253165, max=0.0499864916269, mean=0.024485981865133302, median=0.02156431952125, std=0.011762760682431641, unique=1000
+- drug_efficacy: min=0.302936037564, max=0.999977307729, mean=0.75387668165759, median=0.7934925510915, std=0.19869230597798482, unique=1000
+- penetration_depth: min=0.0, max=1.8, mean=0.8433999999999999, median=0.8, std=0.412791036724394, unique=10
+- average_drug_concentration: min=0.000616923411712, max=0.0124329044392, mean=0.004024302769453727, median=0.0035826430333950002, std=0.002293151412612768, unique=1000
+- final_tumor_volume: min=50000.0, max=997665.611224, mean=337941.1660148255, median=249081.935833, std=275216.2016770581, unique=853
+- tumor_reduction_percent: min=0.233438877565, max=95.0, mean=66.20588339851729, median=75.0918064167, std=27.521620167706402, unique=853
+
+Final dataset status
+--------------------
+- Clean data: yes
+- No duplicate rows: yes
+- No missing values: yes
+- Numerical values only: yes
+- Ready for downstream preprocessing: yes

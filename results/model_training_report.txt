@@ -1,0 +1,32 @@
+XGBoost Model Training Report
+=============================
+
+Model: XGBRegressor
+Training samples: 800
+Testing samples: 200
+Features: 8
+Cross Validation method: 5-fold KFold (shuffle=True, random_state=42)
+Hyperparameter search method: RandomizedSearchCV (30 candidates, 5-fold CV, scoring=R2)
+Baseline mean cross-validation R2: 0.928410
+Baseline cross-validation R2 standard deviation: 0.010924
+Best cross-validation score: 0.939484
+Best parameters:
+{
+  "colsample_bytree": 1.0,
+  "gamma": 0.1,
+  "learning_rate": 0.1,
+  "max_depth": 3,
+  "min_child_weight": 3,
+  "n_estimators": 300,
+  "reg_alpha": 0.001,
+  "reg_lambda": 0.5,
+  "subsample": 0.9
+}
+Training runtime (seconds): 11.230
+Random seed: 42
+Python version: 3.14.6
+Platform: Windows-11-10.0.26200-SP0
+xgboost version: 3.3.0
+scikit-learn version: 1.9.0
+pandas version: 3.0.3
+numpy version: 2.4.6

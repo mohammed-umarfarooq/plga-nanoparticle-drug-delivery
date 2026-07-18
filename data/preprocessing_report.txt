@@ -1,0 +1,43 @@
+PLGA Machine Learning Preprocessing Report
+========================================
+Input dataset: C:\Users\moham\Downloads\plga-nanoparticle-drug-delivery-main\data\processed_dataset.csv
+Number of samples: 1000
+Number of features: 8
+Target variable: tumor_reduction_percent
+Training samples: 800
+Testing samples: 200
+Random seed: 42
+Scaling method: StandardScaler
+Reason for scaling decision: Feature scales vary substantially across columns, so StandardScaler is applied to place them on a comparable scale for downstream ML modules.
+Preprocessing fit: training set only; the held-out test set was transformed using training statistics.
+
+Feature list
+-----------
+- particle_size_nm
+- drug_diffusion
+- nanoparticle_diffusion
+- release_rate
+- uptake_rate
+- drug_loading
+- tumor_growth_rate
+- drug_efficacy
+
+Files generated
+---------------
+- data\feature_summary.txt
+- models\preprocessing_pipeline.pkl
+- data\train.csv
+- data\test.csv
+- data\X_train.csv
+- data\X_test.csv
+- data\y_train.csv
+- data\y_test.csv
+
+Validation status
+-----------------
+- Dataset validation: passed
+- Target separation: passed
+- Train/test split: passed
+- Missing values: none
+- NaN values: none
+- Inf values: none

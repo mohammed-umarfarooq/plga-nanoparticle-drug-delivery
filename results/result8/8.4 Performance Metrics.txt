@@ -1,0 +1,11 @@
+Result 8: XGBoost Held-out Test Performance
+=============================================
+
+All values below use the same independent test set as Results 8.1 and 8.2.
+R²:                 0.951075
+MAE:                4.439944
+RMSE:               6.554706
+MSE:                42.964174
+Maximum Error:      30.880092
+
+Result 8.3 shows cross-validation scores from hyperparameter search; it is not a training-versus-validation learning curve.

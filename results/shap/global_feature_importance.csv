@@ -1,0 +1,9 @@
+Feature,Mean Absolute SHAP Value,Rank
+tumor_growth_rate,18.76187816619873,1
+drug_efficacy,15.751939679086208,2
+release_rate,8.771738913394511,3
+nanoparticle_diffusion,0.7957599902665242,4
+uptake_rate,0.7764729658700525,5
+drug_loading,0.4022753351787105,6
+particle_size_nm,0.2739418593456503,7
+drug_diffusion,0.2581034259859007,8

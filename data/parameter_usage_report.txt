@@ -1,0 +1,12 @@
+Parameter Usage Report
+======================
+
+Parameter,Used by Simulation (Yes/No),Simulation Component,Affected Outputs,Notes
+"particle_size_nm","No","Dataset metadata only","None in current Phase 1 simulation","Sampled for ML/future extension; current transport uses np_diffusion directly."
+"drug_diffusion","No","Dataset metadata only","None in current Phase 1 simulation","The validated drug-release solver uses an internal drug_diffusion_factor and does not accept this parameter."
+"np_diffusion","Yes","src.transport_model.solve_transport","nanoparticle concentration, penetration depth, drug concentration, tumor response","Passed as diffusion_coefficient."
+"release_rate","Yes","src.drug_release.solve_drug_release","drug concentration, tumor response","Passed as release_constant."
+"uptake_rate","Yes","src.transport_model.solve_transport","nanoparticle concentration, penetration depth, drug concentration, tumor response","Passed as uptake_coeff."
+"drug_loading","Yes","ml.generate_dataset before drug release","loaded nanoparticle amount, drug concentration, tumor response","Multiplies nanoparticle concentration before release."
+"tumor_growth_rate","Yes","src.tumor_growth.solve_tumor_growth","final tumor volume, tumor reduction","Controls the logistic growth term."
+"drug_efficacy","Yes","src.tumor_growth.solve_tumor_growth","final tumor volume, tumor reduction","Controls the drug-induced killing term."

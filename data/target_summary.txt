@@ -1,0 +1,14 @@
+Target Summary
+==============
+
+Target column: tumor_reduction_percent
+Minimum tumor reduction: 0.233439
+Maximum tumor reduction: 95.000000
+Mean: 66.205883
+Median: 75.091806
+Standard deviation: 27.521620
+5th percentile: 12.601969
+95th percentile: 95.000000
+
+Warnings:
+- None

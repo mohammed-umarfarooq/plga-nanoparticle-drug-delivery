@@ -1,0 +1,44 @@
+Feature Summary
+===============
+Number of features: 8
+
+Feature names
+-------------
+- particle_size_nm
+- drug_diffusion
+- nanoparticle_diffusion
+- release_rate
+- uptake_rate
+- drug_loading
+- tumor_growth_rate
+- drug_efficacy
+
+Feature data types
+------------------
+- particle_size_nm: float64
+- drug_diffusion: float64
+- nanoparticle_diffusion: float64
+- release_rate: float64
+- uptake_rate: float64
+- drug_loading: float64
+- tumor_growth_rate: float64
+- drug_efficacy: float64
+
+Feature ranges
+--------------
+- particle_size_nm: min=20.0195, max=199.935
+- drug_diffusion: min=1.02257e-10, max=9.99787e-09
+- nanoparticle_diffusion: min=1.05683e-10, max=9.98172e-09
+- release_rate: min=0.0101563, max=0.199995
+- uptake_rate: min=0.0100051, max=0.0999614
+- drug_loading: min=0.200021, max=0.999735
+- tumor_growth_rate: min=0.0100073, max=0.0499865
+- drug_efficacy: min=0.302936, max=0.999977
+
+Constant features
+-----------------
+- None
+
+Near-constant features
+-----------------------
+- None

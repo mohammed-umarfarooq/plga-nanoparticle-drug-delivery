@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "PLGA Nanoparticle Drug Delivery Simulation with Machine Learning Surrogate Modeling"
+message: >
+  If you use this repository in your research, please cite it using the
+  metadata below.
+type: software
+
+authors:
+  - family-names: Farooq
+    given-names: Mohammed Umar
+    alias: mohammed-umarfarooq
+
+repository-code: "https://github.com/mohammed-umarfarooq/plga-nanoparticle-drug-delivery"
+
+abstract: >
+  A computational framework for PLGA nanoparticle drug delivery simulation
+  integrated with machine learning surrogate modeling, SHAP explainability,
+  AI-based optimization, and validation workflow.
+
+keywords:
+  - PLGA
+  - Drug Delivery
+  - Computational Simulation
+  - Machine Learning
+  - XGBoost
+  - SHAP
+  - Optimization
+  - Nanoparticles
+  - Cancer
+  - Biomedical Engineering
+
+license: MIT
+
+version: "1.0.0"
+
+date-released: 2026-07-12

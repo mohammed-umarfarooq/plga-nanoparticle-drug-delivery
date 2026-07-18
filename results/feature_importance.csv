@@ -1,0 +1,9 @@
+Feature,Importance,Rank
+tumor_growth_rate,0.35257038,1
+drug_efficacy,0.3525242,2
+release_rate,0.2389721,3
+particle_size_nm,0.015736714,4
+drug_loading,0.011997103,5
+nanoparticle_diffusion,0.011634927,6
+uptake_rate,0.01092797,7
+drug_diffusion,0.005636683,8

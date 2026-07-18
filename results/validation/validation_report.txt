@@ -1,0 +1,25 @@
+Optimized Formulation Validation Report
+======================================
+
+Validation feasibility
+----------------------
+Optimized formulations assessed: 10
+Full computational validation: feasible.
+Feasibility conclusion: feasible.
+
+Methodology
+-----------
+The feature names retained by models/xgboost_model.pkl were compared with the independent parameter names in PARAMETER_RANGES from ml/generate_dataset.py. The optimized CSV was checked to confirm it contains every independent simulation parameter.
+
+Validation results and metrics
+------------------------------
+Validation is feasible because the model uses only independent parameters.
+
+Model limitations
+-----------------
+Independent simulation inputs: particle_size_nm, drug_diffusion, np_diffusion, release_rate, uptake_rate, drug_loading, tumor_growth_rate, drug_efficacy.
+Derived model inputs: None.
+
+Overall conclusion
+------------------
+Validation feasibility check passed successfully. The model is leakage-free.

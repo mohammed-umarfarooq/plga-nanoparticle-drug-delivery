@@ -1,0 +1,27 @@
+ML Dataset Analysis
+===================
+
+Target column: tumor_reduction_percent
+Minimum target: 0.233439
+Maximum target: 95.000000
+Mean target: 66.205883
+Median target: 75.091806
+Standard deviation: 27.521620
+Variance: 757.439577
+Skewness: -0.737592
+
+Extreme target frequency
+------------------------
+Extreme frequency is reported descriptively using the empirical 5th and 95th percentiles. These quantiles are not filtering rules.
+5th percentile target: 12.601969
+95th percentile target: 95.000000
+Samples in empirical tails: 198 (19.80%)
+Empirical-tail share of absolute target magnitude: 21.68%
+
+Training impact
+---------------
+Large negative values may dominate squared-error regression losses because their absolute magnitude is much larger than moderate responses. They are still model-consistent when they satisfy the documented Phase 1 assumptions.
+
+Recommendation
+--------------
+Keep all model-consistent samples in the generated dataset. For model training, evaluate robust target transforms or sample weighting, and use validation splits that preserve the extreme target region.

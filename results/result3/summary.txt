@@ -1,0 +1,51 @@
+Effect of Interstitial Fluid Pressure (IFP)
+========================================
+
+Simulation parameters: IFP values were swept from 5 to 30 mmHg.
+The pressure equation was kept unchanged.
+Higher IFP was represented as lower effective transport.
+
+Maximum value: 0.024144 kg/m^3
+Minimum value: 0.017866 kg/m^3
+Average value: 0.021199 kg/m^3
+
+IFP = 5 mmHg
+  Average Drug Concentration : 0.024144 kg/m^3
+  Maximum Drug Concentration : 0.052297 kg/m^3
+  Penetration Depth : 3.06 mm
+  Final Tumor Volume : 101259.04
+
+IFP = 10 mmHg
+  Average Drug Concentration : 0.023103 kg/m^3
+  Maximum Drug Concentration : 0.050705 kg/m^3
+  Penetration Depth : 2.86 mm
+  Final Tumor Volume : 107605.72
+
+IFP = 15 mmHg
+  Average Drug Concentration : 0.021971 kg/m^3
+  Maximum Drug Concentration : 0.048960 kg/m^3
+  Penetration Depth : 2.86 mm
+  Final Tumor Volume : 115301.23
+
+IFP = 20 mmHg
+  Average Drug Concentration : 0.020735 kg/m^3
+  Maximum Drug Concentration : 0.046987 kg/m^3
+  Penetration Depth : 2.65 mm
+  Final Tumor Volume : 124291.71
+
+IFP = 25 mmHg
+  Average Drug Concentration : 0.019375 kg/m^3
+  Maximum Drug Concentration : 0.044729 kg/m^3
+  Penetration Depth : 2.45 mm
+  Final Tumor Volume : 134847.28
+
+IFP = 30 mmHg
+  Average Drug Concentration : 0.017866 kg/m^3
+  Maximum Drug Concentration : 0.042105 kg/m^3
+  Penetration Depth : 2.45 mm
+  Final Tumor Volume : 147355.91
+
+Scientific observations:
+As IFP increases, effective transport decreases.
+Short interpretation:
+Reduced transport lowers drug delivery and produces shallower penetration.
