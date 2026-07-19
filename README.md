@@ -200,11 +200,12 @@ If you utilize this computational framework or surrogate optimization models in 
 
 ---
 
-## 12. License
-This repository is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+## Authors
+
+| Name | Course / Specialization |
+| :--- | :--- |
+| **Mohammed Umar Farooq** | B.Tech AIML (Minor: Robotics & Automation) |
 
 ---
 
-## 13. Author and Acknowledgement
-- **Mohammed Umar Farooq** - B.Tech AIML (Minor: Robotics & Automation)
-- Framework developed under the supervision of the Department of Nanotechnology.
+⭐ If you find this project useful, consider giving the repository a star.
